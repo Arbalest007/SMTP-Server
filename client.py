@@ -26,23 +26,26 @@ print(recv1)
 if recv1[:3] != '250':
     print('250 reply not received from server.')
 
-# Gmail Authentication
+# Gmail Authentication - START
 clientSocket.send(('starttls\r\n').encode())
 recvTTLS = clientSocket.recv(1024).decode()
 print("Start TTLS: ")
 print(recvTTLS)
 
+#Need to wrap with SSL for Gmail Security
 secureClientSocket = ssl.wrap_socket(clientSocket, ssl_version=ssl.PROTOCOL_SSLv23)
 loginName = base64.b64encode(('csuf.tester.471@gmail.com').encode()) + ('\r\n').encode()
+
+#Gmail login password must be generated via "App Passwords" as per new Gmail security protocols
 loginPassword = base64.b64encode(('pjyv wroi tdjl raof').encode()) + ('\r\n').encode()
 
 secureClientSocket.send(('AUTH LOGIN\r\n').encode())
 print(secureClientSocket.recv(1024).decode())
-
 secureClientSocket.send(loginName)
 print(secureClientSocket.recv(1024).decode())
 secureClientSocket.send(loginPassword)
 print(secureClientSocket.recv(1024).decode())
+# Gmail Authentication - END
 
 # Send MAIL FROM command and print server response.
 # Fill in start
