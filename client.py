@@ -36,7 +36,6 @@ secureClientSocket = ssl.wrap_socket(clientSocket, ssl_version=ssl.PROTOCOL_SSLv
 loginName = base64.b64encode(('csuf.tester.471@gmail.com').encode()) + ('\r\n').encode()
 loginPassword = base64.b64encode(('pjyv wroi tdjl raof').encode()) + ('\r\n').encode()
 
-
 secureClientSocket.send(('AUTH LOGIN\r\n').encode())
 print(secureClientSocket.recv(1024).decode())
 
@@ -47,48 +46,42 @@ print(secureClientSocket.recv(1024).decode())
 
 # Send MAIL FROM command and print server response.
 # Fill in start
-# mailFromCommand = "MAIL FROM:<csuf.tester.471@gmail.com>\r\n"
-# secureClientSocket.send(mailFromCommand.encode())
-# recv2 = secureClientSocket.recv(1024)
-# print(recv2)
-# if recv2[:3] != "250":
-# 	print('250 reply not received from server')
+mailFromCommand = "MAIL FROM: <csuf.tester.471@gmail.com>\r\n"
+secureClientSocket.send(mailFromCommand.encode())
+print(secureClientSocket.recv(1024).decode())
 # Fill in end
 
 # Send RCPT TO command and print server response.
 # Fill in start
-# rcptToCommand = "RCPT TO:<patrick.lin.117@gmail.com>\r\n"
-# secureClientSocket.send(rcptToCommand.encode())
-# recv3 = secureClientSocket.recv(1024)
-# print(recv3)
-# if recv3[:3] != "250":
-# 	print('250 reply not received from server')
+rcptToCommand = "RCPT TO: <patrick.lin.117@gmail.com>\r\n"
+secureClientSocket.send(rcptToCommand.encode())
+print(secureClientSocket.recv(1024).decode())
 # Fill in end
 
 # Send DATA command and print server response.
 # Fill in start
-# dataCommand = "DATA\r\n"
-# dataRcpt = secureClientSocket.send(dataCommand.encode())
-# recv4 = secureClientSocket.recv(1024)
-# print(recv4)
-# if recv4[:3] != "250":
-#     print('250 reply not received from server')
+dataCommand = "DATA\r\n"
+secureClientSocket.send(dataCommand.encode())
+print(secureClientSocket.recv(1024).decode())
 # Fill in end
 
 # Send message data.
 # Fill in start
-# secureClientSocket.send("To: patrick.lin.117@gmail.com".encode())
-# secureClientSocket.send("From: csuf.tester.471@gmail.com".encode())
-# secureClientSocket.send("Subject: Hello World".encode())
-# secureClientSocket.send(msg.encode())
+secureClientSocket.send("To: patrick.lin.117@gmail.com\r\n".encode())
+secureClientSocket.send("From: csuf.tester.471@gmail.com\r\n".encode())
+secureClientSocket.send("Subject: Hello World\r\n".encode())
+secureClientSocket.send(msg.encode())
 # Fill in end
 
 # Message ends with a single period.
 # Fill in start
+secureClientSocket.send(endmsg.encode())
 # Fill in end
 
 # Send QUIT command and get server response.
 # Fill in start
+secureClientSocket.send(('QUIT\r\n').encode())
+print(secureClientSocket.recv(1024).decode())
 # Fill in end
 
 secureClientSocket.close()
