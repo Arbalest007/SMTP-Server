@@ -12,7 +12,7 @@ This Python file fulfills "Part A" of the project requirements and sends an emai
 To run this Python file, first navigate to the folder with the scripts.
 
 Run the program with:
-|   python3 client_basic.py
+     python3 client_basic.py
 
 Go to https://mailosaur.com/app/login
 
@@ -33,7 +33,7 @@ To run this program, you will need to edit the client_ssl.py file.
 On lines 62 and 80 where it says *PLACEHOLDER*, you will need to change it to your respective email address. For example, if you wanted the recipient to be the same as our pre-defined sender account, you would replace *PLACEHOLDER* with *csuf.tester.471@gmail.com*.
 
 Save the changes and run the program with:
-|   python3 client_ssl.py
+     python3 client_ssl.py
 
 You should see an email that was sent to the email address inbox you entered.
 
