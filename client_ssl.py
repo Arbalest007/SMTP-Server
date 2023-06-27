@@ -56,7 +56,11 @@ print(secureClientSocket.recv(1024).decode())
 
 # Send RCPT TO command and print server response.
 # Fill in start
-rcptToCommand = "RCPT TO: <PLACEHOLDER@gmail.com>\r\n"
+
+# SAMPLE PLACEHOLDER CHANGE:
+# rcptToCommand = "RCPT TO: <patrick.lin.117@gmail.com>\r\n"
+rcptToCommand = "RCPT TO: <PLACEHOLDER>\r\n"
+
 secureClientSocket.send(rcptToCommand.encode())
 print(secureClientSocket.recv(1024).decode())
 # Fill in end
@@ -70,7 +74,11 @@ print(secureClientSocket.recv(1024).decode())
 
 # Send message data.
 # Fill in start
-secureClientSocket.send("To: PLACEHOLDER@gmail.com\r\n".encode())
+
+# SAMPLE PLACEHOLDER CHANGE
+# secureClientSocket.send("To: patrick.lin.117@gmail.com\r\n".encode())
+secureClientSocket.send("To: PLACEHOLDER\r\n".encode())
+
 secureClientSocket.send("From: csuf.tester.471@gmail.com\r\n".encode())
 secureClientSocket.send("Subject: Hello World\r\n".encode())
 secureClientSocket.send(msg.encode())
