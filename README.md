@@ -7,7 +7,7 @@ Saad Ansari  saad.ansari@csu.fullerton.com
 # SMTP-Server
 
 ## client_basic.py
-This file fulfills "Part A" of the project requirements and sends an email to an online SMTP server called Mailosaur. Mailosaur is an service which lets clients test email functionality and hosts multiple SMTP servers which users can connect to with provided credentials and trial email functionality.
+This file fulfills "Part A" of the project requirements and sends an email to an online SMTP server called Mailosaur. Mailosaur is a service which lets clients test email functionality. It hosts multiple SMTP servers which users can connect to with provided credentials and trial email functionality.
 
 To run this Python file, first navigate to the folder with the scripts.
 
@@ -37,6 +37,6 @@ Save the changes and run the program with:
      
      python3 client_ssl.py
 
-You should see an email that was sent to the email address inbox you entered.
+A message should be sent to the email address inbox you entered.
 
 <img src="https://github.com/Arbalest007/SMTP-Server/assets/47013008/89eb1db3-0f09-46c3-8154-59d7d2c2f807" width="500" height="400">
