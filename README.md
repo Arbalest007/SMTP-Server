@@ -26,16 +26,16 @@ You should see an email that was sent to the inbox.
 <img src="https://github.com/Arbalest007/SMTP-Server/assets/47013008/1ee21e86-333e-490b-807c-90f4f216ab56" width="500" height="400">
 
 ## client_ssl.py
-Using a google mail server
+Using the google mail server
 
 You will need to edit the client_ssl.py file.
 
-On lines 59 and 73 where it says PLACEHOLDER, you will need to change it to your email address
+On lines 59 and 73 where it says PLACEHOLDER, you will need to change it to your email address.
 
 Save the change and run the program with
 >python3 client_ssl.py
 
-You should see an email that was sent to the inbox.
+You should see an email that was sent to your inbox.
 
 <img src="https://github.com/Arbalest007/SMTP-Server/assets/47013008/89eb1db3-0f09-46c3-8154-59d7d2c2f807" width="500" height="400">
 
