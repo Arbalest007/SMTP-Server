@@ -32,11 +32,11 @@ recvTTLS = clientSocket.recv(1024).decode()
 print("Start TTLS: ")
 print(recvTTLS)
 
-#Need to wrap clientSocket with SSL for Gmail Security
+# Need to wrap clientSocket with SSL for Gmail Security
 secureClientSocket = ssl.wrap_socket(clientSocket, ssl_version=ssl.PROTOCOL_SSLv23)
 loginName = base64.b64encode(('csuf.tester.471@gmail.com').encode()) + ('\r\n').encode()
 
-#Gmail login password must be generated via "App Passwords" as per new Gmail security protocols
+# Gmail login password must be generated via "App Passwords" as per new Gmail security protocols
 loginPassword = base64.b64encode(('pjyv wroi tdjl raof').encode()) + ('\r\n').encode()
 
 secureClientSocket.send(('AUTH LOGIN\r\n').encode())
