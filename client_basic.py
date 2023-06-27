@@ -79,4 +79,3 @@ print(clientSocket.recv(1024).decode())
 # Fill in end
 
 clientSocket.close()
-clientSocket.close()
